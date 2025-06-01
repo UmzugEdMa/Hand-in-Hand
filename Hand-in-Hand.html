@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hand in Hand Umzüge – Hamburg</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #023e8a;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      background-color: white;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1601379327079-d1042b7b75f2?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      background-color: #023e8a;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #00b4d8;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button[type="submit"]:hover {
+      background-color: #0096c7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hand in Hand Umzüge</h1>
+    <p>Ihr zuverlässiger Partner für Umzugshilfe in Hamburg & Umgebung</p>
+  </header>
+
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Stressfrei umziehen – mit Hand in Hand</h1>
+    <p>Wir helfen privaten Haushalten und Unternehmen in Hamburg und Umgebung beim Umzug – schnell, sorgfältig und professionell.</p>
+    <a class="button" href="#kontakt">Jetzt anfragen</a>
+  </section>
+
+  <section id="leistungen">
+    <h2>Unsere Leistungen</h2>
+    <ul>
+      <li>Komplette Umzugshilfe für Privatpersonen</li>
+      <li>Firmenumzüge mit Erfahrung</li>
+      <li>Transport & Möbeltaxi</li>
+      <li>Ab- und Aufbau von Möbeln</li>
+      <li>Entrümpelung & Entsorgung</li>
+      <li>Flexible Terminvereinbarung</li>
+    </ul>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt aufnehmen</h2>
+    <p>Sie möchten einen Umzug planen oder haben Fragen? Schreiben Sie uns:</p>
+
+    <form action="mailto:kontakt@handinhand-umzuege.de" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Ihr Name" required>
+      <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+      <textarea name="nachricht" rows="5" placeholder="Ihre Nachricht..." required></textarea>
+      <button type="submit">Nachricht senden</button>
+    </form>
+
+    <p><strong>Alternativ per E-Mail:</strong> kontakt@handinhand-umzuege.de<br />
+       <strong>Telefon:</strong> 040 / 123 456 78</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Hand in Hand Umzüge – Hamburg. Alle Rechte vorbehalten.
+  </footer>
+</body>
+</html>
