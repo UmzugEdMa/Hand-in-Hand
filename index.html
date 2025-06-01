@@ -5,41 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hand in Hand Umzüge – Hamburg</title>
   <style>
+    :root {
+      --primary: #0077b6;
+      --secondary: #023e8a;
+      --accent: #00b4d8;
+      --accent-hover: #0096c7;
+      --light-bg: #f4f4f4;
+      --dark-text: #222;
+      --white: #fff;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
     }
     header {
-      background-color: #0077b6;
-      color: white;
-      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 2rem 1rem;
       text-align: center;
+      animation: fadeIn 1.2s ease;
     }
     nav {
-      background-color: #023e8a;
-      padding: 0.5rem;
+      background-color: var(--secondary);
       text-align: center;
+      padding: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav a {
-      color: white;
+      color: var(--white);
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
+      transition: color 0.3s;
     }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-      background-color: white;
+    nav a:hover {
+      color: var(--accent);
     }
     .hero {
       background: url('https://images.unsplash.com/photo-1601379327079-d1042b7b75f2?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: white;
-      padding: 5rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+    .hero * {
+      position: relative;
+      z-index: 1;
     }
     .hero h1 {
       font-size: 3rem;
@@ -47,22 +69,43 @@
     }
     .hero p {
       font-size: 1.5rem;
-    }
-    footer {
-      text-align: center;
-      background-color: #023e8a;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
     .button {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 2rem;
       padding: 0.75rem 1.5rem;
-      background-color: #00b4d8;
-      color: white;
+      background-color: var(--accent);
+      color: var(--white);
       text-decoration: none;
       border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .button:hover {
+      background-color: var(--accent-hover);
+      transform: scale(1.05);
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      animation: fadeInUp 0.8s ease;
+    }
+    h2 {
+      color: var(--secondary);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: '✔';
+      color: var(--accent);
+      margin-right: 0.5rem;
     }
     form {
       display: flex;
@@ -77,23 +120,48 @@
       font-size: 1rem;
     }
     button[type="submit"] {
-      background-color: #00b4d8;
-      color: white;
+      background-color: var(--accent);
+      color: var(--white);
       border: none;
       padding: 0.75rem;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
     }
     button[type="submit"]:hover {
-      background-color: #0096c7;
+      background-color: var(--accent-hover);
+      transform: scale(1.03);
+    }
+    footer {
+      text-align: center;
+      background-color: var(--secondary);
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    img.hero-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Hand in Hand Umzüge</h1>
-    <p>Ihr zuverlässiger Partner für Umzugshilfe in Hamburg & Umgebung</p>
+    <p>Ihr verlässlicher Partner für Umzugshilfe in Hamburg & Umgebung</p>
   </header>
 
   <nav>
@@ -102,14 +170,13 @@
   </nav>
 
   <section class="hero">
-  <h1>Stressfrei umziehen – mit Hand in Hand</h1>
-  <p>Wir helfen privaten Haushalten und Unternehmen in Hamburg und Umgebung beim Umzug – schnell, sorgfältig und professionell.</p>
+    <h1>Stressfrei umziehen – mit Hand in Hand</h1>
+    <p>Wir helfen privaten Haushalten und Unternehmen in Hamburg und Umgebung beim Umzug – schnell, sorgfältig und professionell.</p>
 
-  <img src="https://github.com/UmzugEdMa/Hand-in-Hand/raw/42d0ea2d545f23bef64eb87dca61244c84a8824b/hand-819279_1280.jpg" alt="Zwei Hände halten sich" style="max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 8px;" />
+    <img src="https://github.com/UmzugEdMa/Hand-in-Hand/raw/main/hand-819279_1280.jpg" alt="Zwei Hände halten sich" class="hero-img" />
 
-  <a class="button" href="#kontakt">Jetzt anfragen</a>
-</section>
-
+    <a class="button" href="#kontakt">Jetzt anfragen</a>
+  </section>
 
   <section id="leistungen">
     <h2>Unsere Leistungen</h2>
@@ -143,3 +210,4 @@
   </footer>
 </body>
 </html>
+
