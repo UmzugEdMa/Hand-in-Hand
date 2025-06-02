@@ -21,6 +21,55 @@
       color: var(--dark-text);
       line-height: 1.6;
     }
+    nav {
+      background-color: var(--secondary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    nav a, .nav-phone-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      padding: 0.25em 0.7em;
+      border-radius: 4px;
+    }
+    nav a:hover, .nav-phone-link:hover {
+      color: var(--accent);
+      background: rgba(0,180,216,0.08);
+    }
+    .phone-icon {
+      margin-right: 0.45em;
+      font-size: 1.15em;
+      vertical-align: middle;
+    }
+    @media (max-width: 600px) {
+      nav {
+        padding: 0.3rem 0;
+      }
+      .nav-center {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      nav a, .nav-phone-link {
+        font-size: 1rem;
+        padding: 0.5em 0.7em;
+      }
+    }
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--white);
@@ -28,30 +77,14 @@
       text-align: center;
       animation: fadeIn 1.2s ease;
     }
-    nav {
-      background-color: var(--secondary);
-      text-align: center;
-      padding: 0.75rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
     .hero {
-  background: url('https://github.com/UmzugEdMa/Hand-in-Hand/raw/main/hand-819279_1280.jpg') center/cover no-repeat;
-  color: white;
-  padding: 6rem 2rem;
-  text-align: center;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  position: relative;
-}
+      background: url('https://github.com/UmzugEdMa/Hand-in-Hand/raw/main/hand-819279_1280.jpg') center/cover no-repeat;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      position: relative;
+    }
     .hero::after {
       content: '';
       position: absolute;
@@ -159,20 +192,24 @@
   </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-center">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:04012345678" class="nav-phone-link">
+        <span class="phone-icon">☎️</span>040 / 123 456 78
+      </a>
+    </div>
+  </nav>
+
   <header>
     <h1>Hand in Hand Umzüge</h1>
     <p>Ihr verlässlicher Partner für Umzugshilfe in Hamburg & Umgebung</p>
   </header>
 
-  <nav>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-
   <section class="hero">
     <h1>Stressfrei umziehen – mit Hand in Hand</h1>
     <p>Wir helfen privaten Haushalten und Unternehmen in Hamburg und Umgebung beim Umzug – schnell, sorgfältig und professionell.</p>
-
     <a class="button" href="#kontakt">Jetzt anfragen</a>
   </section>
 
@@ -191,14 +228,12 @@
   <section id="kontakt">
     <h2>Kontakt aufnehmen</h2>
     <p>Sie möchten einen Umzug planen oder haben Fragen? Schreiben Sie uns:</p>
-
     <form action="mailto:kontakt@handinhand-umzuege.de" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Ihr Name" required>
       <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
       <textarea name="nachricht" rows="5" placeholder="Ihre Nachricht..." required></textarea>
       <button type="submit">Nachricht senden</button>
     </form>
-
     <p><strong>Alternativ per E-Mail:</strong> kontakt@handinhand-umzuege.de<br />
        <strong>Telefon:</strong> 040 / 123 456 78</p>
   </section>
@@ -206,8 +241,6 @@
   <footer>
     &copy; 2025 Hand in Hand Umzüge – Hamburg. Alle Rechte vorbehalten.
   </footer>
-</body>
-</html>
 </body>
 </html>
 
