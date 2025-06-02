@@ -228,7 +228,13 @@
   <section id="kontakt">
     <h2>Kontakt aufnehmen</h2>
     <p>Sie möchten einen Umzug planen oder haben Fragen? Schreiben Sie uns:</p>
-    <form action="mailto:kontakt@handinhand-umzuege.de" method="post" enctype="text/plain">
+    <form action="https://formsubmit.co/edmondmanaserian@gmail.com" method="POST">
+      <!-- Honeypot field to prevent spam -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Disable Captcha if you want (optional, see formsubmit docs) -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Success message redirect (optional) -->
+      <input type="hidden" name="_next" value="https://hand-in-hand-umzuege.de/danke.html">
       <input type="text" name="name" placeholder="Ihr Name" required>
       <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
       <textarea name="nachricht" rows="5" placeholder="Ihre Nachricht..." required></textarea>
@@ -241,6 +247,8 @@
   <footer>
     &copy; 2025 Hand in Hand Umzüge – Hamburg. Alle Rechte vorbehalten.
   </footer>
+</body>
+</html>
 </body>
 </html>
 
